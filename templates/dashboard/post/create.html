@@ -1,0 +1,76 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-0 h-auto">
+            <div class="card-body py-0">
+                <div class="row gx-0">
+  <!-- /column -->
+  <div class="col-lg-9 col-xl-10 col-xxl-9">
+    <div class="email-right-box ms-0 ">
+        <div class="compose-wrapper mt-3 " id="compose-content">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="compose-content">
+                    <h5 class="my-3"> Title</h5>
+                    <div class="mb-3">
+                        <input name="title" type="text" class="form-control bg-transparent" placeholder=" Title">
+                    </div>
+                    <table class="table table-responsive-md">
+                        <tr>
+                            <th>
+                            <h5 class="my-3"> Category</h5>
+                            </th>
+                            <th>                            
+                            <h5 class="my-3"> Region</h5>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="single-select-placeholder js-states" name="category_id">
+
+                                    {% for category in categories %}
+                                    <option value="{{category.id}}">{{category}}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <select class="single-select-placeholder js-states" name="region_id">
+
+                                    {% for region in regions %}
+                                    <option value="{{region.id}}">{{region}}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <h5 class="my-3"> Body</h5>
+                    <div class="mb-3">
+                        <textarea name="body" id="email-compose-editor" class="textarea_editor form-control bg-transparent" rows="5" placeholder="Enter text ..."></textarea>
+                    </div>
+                    <!-- Card -->
+                            <p class="mb-1">Date</p>
+                            <input type="date" name="date" class="datepicker-default form-control" id="datepicker" multiple />
+                    <!-- Card -->
+                    <h5 class="my-3">Banner image</h5>
+                    <div class="fallback">
+                        <input name="file" type="file" multiple>
+                    </div>
+                </div>
+                <div class="text-start mt-4 mb-3">
+                    <button class="btn btn-primary btn-sl-sm me-2" type="submit"><span class="me-2"><i class="fa fa-paper-plane"></i></span>Create</button>
+                    <!-- <button class="btn btn-danger light btn-sl-sm" type="button"><span class="me-2"><i class="fa fa-times"></i></span>Discard</button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}

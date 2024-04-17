@@ -1,0 +1,4 @@
+16.04.2024
+1) News web dasturi uchun. Category, Itemlar uchun detail va listlarni ko`radigan API yozish 
+2) News web dasturi uchun Dashboardda Authentication yozish(login, logout) +
+3) News web dasturi uchun Dashboardda Category CRUD yozish +
